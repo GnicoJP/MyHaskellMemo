@@ -1,3 +1,7 @@
+```haskell
+{-# LANGUAGE TypeFamilies #-}
+```
+
 # Type Families/型族
 型を特定の型引数にオーバーロードするものである．  
 ## data family
@@ -45,6 +49,7 @@ data IntList = XNext !Int !(IntList) | XLast
 ### カインド
 カインドを指定することもできる．
 ```haskell
+{-# LANGUAGE DataKinds #-}
 data family (Keyable k) =>  Map k :: * -> *
 ```
 `Map`は連想配列である．型引数`k`はキーになれる，型クラス`Keyable`のインスタンスである．  
@@ -52,6 +57,7 @@ data family (Keyable k) =>  Map k :: * -> *
 
 以下は型族でできる指定とできない指定である．
 ```haskell
+{-# LANGUAGE DataKinds #-}
 class C a b c where { data T c a :: * }  -- OK
 class C a b c where { data T a a :: * }  -- Bad: 型引数が繰り返されるのは意味がない．
 class D a where { data T a x :: * }      -- Bad: xは型クラスの型引数にはない．以下のように書く．
