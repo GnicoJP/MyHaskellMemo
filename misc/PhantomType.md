@@ -39,6 +39,8 @@ main =
     getInt f
 ```
 としてあげることで，コンパイルエラーに持って行ける．  
+
+### GADTsの利用
 しかし，悪意を持って，次のように関数`deserializeFloat`を作成することができてしまう．
 （型が`DeserializeData Int`として定義できてしまう．）
 ```haskell
@@ -47,4 +49,12 @@ deserializeFloat =
     ... -- 省略
     FloatData hoge
 ```
-これにはGADTsで対処する．
+これには[GADTs](../lang-ext/GADTs.md)で対処する．  
+ライブラリ作者は，`FloatData`コンストラクタで作った`DeserializeData`について，型引数`a`がFloat以外になって欲しくないはずである．  
+ということは，`FloatData`コンストラクタが`DeserializeData Float`を返すようにGADTsで指定すればよい．
+```haskell
+{-# LANGUAGE GADTs #-}
+data DeserializeData a where
+    IntData :: Int -> DeserializeData Int
+    FloatData :: Float -> DeserializeData Float
+```
