@@ -45,4 +45,5 @@ instance (GMapKey a, GMapKey b) => GMapKey (Either a b) where
 普通に型クラスを実装するのに対して美しく実装することができる．  
 関連型を使わなかった場合，`data (GMapKey k) => GMap k` を用意して， `GMap`に`empty`，`lookup`, `insert`関数を用意して，どんな`k`でもうまく行くように`k`の関数定義・実装とすり合わせなければならないだろう．
 ## 参考
-- [GHC/Type families](https://wiki.haskell.org/GHC/Type_families)
+[GHC/Type families](https://wiki.haskell.org/GHC/Type_families)  
+サンプルコードはすべて上のURLのサンプルコードを参考にしている．
