@@ -50,9 +50,9 @@ data IntList = XNext !Int !(IntList) | XLast
 カインドを指定することもできる．
 ```haskell
 {-# LANGUAGE DataKinds #-}
-data family (Keyable k) =>  Map k :: * -> *
+data family Map k :: * -> *
 ```
-`Map`は連想配列である．型引数`k`はキーになれる，型クラス`Keyable`のインスタンスである．  
+`Map`は連想配列である．型引数`k`はキーである．  
 そして，カインドを見ることによってもう一つ型引数を取る型であることが分かる．
 
 以下は型族でできる指定とできない指定である．
