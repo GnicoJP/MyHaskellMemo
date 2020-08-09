@@ -2,7 +2,7 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE DataKinds #-}
 ```
-
+これを読む前に: [型族](../lang-ext/TypeFamilies.md), [カインド](../Kind.md)
 # 関連データ型/Associated Data Type
 次のような型クラスを定義しよう．
 ```haskell

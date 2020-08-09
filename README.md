@@ -9,3 +9,4 @@ Memo about Haskell langauge. language extensions, types and more.
  - [PhantomType/幽霊型](misc/PhantomType.md)
  - [AssociatedDataType/関連データ型,関連型](misc/AssociatedDataType.md)
  - [Generic Haskell](misc/GenericHaskell.md)
+ - [Kind/カインド](misc/Kind.md)
