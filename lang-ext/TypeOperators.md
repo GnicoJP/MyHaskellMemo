@@ -9,7 +9,7 @@ type (+) a b = Either a b
 ```
 型定義などで使うことができる．
 ```haskell
-someFunc :: forall a b. a + b -> (a -> c) -> (b -> d) -> c + d
-someFunc (Left v) lmap _ = lmap v
-someFunc (Right v) _ rmap = rmap v
+someFunc :: forall a b c d. a + b -> (a -> c) -> (b -> d) -> (c + d)
+someFunc (Left v) lmap _ = Left $ lmap v
+someFunc (Right v) _ rmap = Right $ rmap v
 ```
