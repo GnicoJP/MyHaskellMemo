@@ -13,3 +13,5 @@ Memo about Haskell langauge. language extensions, types and more.
  - [AssociatedDataType/関連データ型,関連型](misc/AssociatedDataType.md)
  - [Generic Haskell](misc/GenericHaskell.md)
  - [Kind/カインド](misc/Kind.md)
+### Library
+ - [GHC.Generics](libs/GHC.Generics.md)
